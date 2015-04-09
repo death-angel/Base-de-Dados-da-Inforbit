@@ -1,0 +1,111 @@
+* { padding: 0; margin: 0; }
+
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 13px;
+ background: #E2EDF3; /*imagem de fundo da pagina inteira*/
+}
+#wrapper { 
+ margin: 0 auto;
+ width: 922px;
+}
+#header {
+ width: 900px;
+ color: #333;
+ padding: 10px;
+ border: 1px solid #AAC9DE;
+ height: 100px;
+ margin: 10px 0px 5px 0px;
+ background-image:url('../img/chip7logo2.jpg');
+ background-repeat:no-repeat;
+ background-position:center;
+ background-color:#FFFFFF;
+}
+#navigation {
+ width: 900px;
+ color: #333;
+ padding: 10px;
+ border: 1px solid #0096D3;
+ text-align:center;
+ margin: 0px 0px 5px 0px;
+ background-color:#FFFFFF;
+}
+
+#content { 
+ width: 900px;
+ color: #333;
+ border: 1px solid #F5A83E;
+ background:#FFFFFF;
+ margin: 0px 0px 5px 0px;
+ padding: 10px;
+ /*height: 350px;*/
+}
+#footer { 
+ width: 900px;
+ color: #333;
+ border: 1px solid #000000;
+ text-align:center;
+ background-color:#F3F2ED;
+ margin: 0px 0px 10px 0px;
+ padding: 10px;
+}
+
+/*table {
+    border-width: thin;
+    border-spacing: 0px;
+    border-style: none;
+    border-color: black;
+}*/
+ 
+.textbox{ 
+height:25px; 
+border: 1px solid #B9BDC1; 
+color: #797979; 
+-moz-box-shadow: 0 2px 4px #bbb inset; 
+-webkit-box-shadow: 0 2px 4px #BBB inset; 
+box-shadow: 0 2px 4px #BBB inset; 
+-moz-border-radius: 3px; 
+-webkit-border-radius: 3px; 
+border-radius: 3px; 
+} 
+.textbox:focus { 
+background-color: #E7E8E7; 
+outline: 0; 
+}
+
+.botao{
+	border : solid 1px #fff700;
+	border-radius : 6px;
+	moz-border-radius : 6px;
+	font-size : 20px;
+	color : #ffffff;
+	padding : 1px 17px;
+	background : #ffd500;
+	background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffd500), color-stop(100%,#ff8c00));
+	background : -moz-linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+	background : -webkit-linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+	background : -o-linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+	background : -ms-linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+	background : linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+}
+
+textarea {
+   resize: none;
+}
+
+a:link {
+    color:black;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
