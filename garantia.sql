@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 09-Abr-2015 às 15:54
--- Versão do servidor: 5.6.21
--- PHP Version: 5.5.19
+-- Máquina: 127.0.0.1
+-- Data de Criação: 10-Abr-2015 às 16:19
+-- Versão do servidor: 5.6.14
+-- versão do PHP: 5.5.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `garantia`
+-- Base de Dados: `garantia`
 --
 
 -- --------------------------------------------------------
@@ -27,14 +27,15 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `dados` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
   `contacto` varchar(9) NOT NULL,
   `id_equipamento` int(11) NOT NULL,
   `n_serie` varchar(50) NOT NULL,
   `prazo` date NOT NULL,
-  `data_recolha` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `data_recolha` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -43,10 +44,17 @@ CREATE TABLE IF NOT EXISTS `dados` (
 --
 
 CREATE TABLE IF NOT EXISTS `equipamentos` (
-`id` int(11) NOT NULL,
-  `id_marca` int(11) NOT NULL,
-  `modelo` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `equipamentos`
+--
+
+INSERT INTO `equipamentos` (`id`, `nome`) VALUES
+(1, 'Computador');
 
 -- --------------------------------------------------------
 
@@ -55,51 +63,11 @@ CREATE TABLE IF NOT EXISTS `equipamentos` (
 --
 
 CREATE TABLE IF NOT EXISTS `marca` (
-`id` int(11) NOT NULL,
-  `nome` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `dados`
---
-ALTER TABLE `dados`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `equipamentos`
---
-ALTER TABLE `equipamentos`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `marca`
---
-ALTER TABLE `marca`
- ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `dados`
---
-ALTER TABLE `dados`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `equipamentos`
---
-ALTER TABLE `equipamentos`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `marca`
---
-ALTER TABLE `marca`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

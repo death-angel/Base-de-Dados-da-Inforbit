@@ -19,27 +19,12 @@
 	<table width='900 px' border="0" align="center">
 	<form action="#" method="POST">
 		<tr>
-			<td>Marca:</td>
-			<td><select name="id_marca">
-					<?php
-						$query = "SELECT * FROM marca";
-						$result = mysql_query($query) or die(mysql_error());
-						while($row = mysql_fetch_array($result)){    
-							?>
-								<option value="<?php echo $row['id'];?>"><?php echo $row['nome'];?></option>
-							<?php
-						}
-					?>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td>Modelo</td>
-			<td><input type="text" name="modelo"></td>
+			<td>Tipo de Equipamento:</td>
+			<td><input type="text" name="tipo"></td>
 		</tr>
 		<tr>
 			<td></td>
-			<td><input type="submit" name="inserir" value="Inserir"></td>
+			<td><input type="submit" name="submit" value="Inserir"></td>
 		</tr>
 	</form>
 	</table>
@@ -50,4 +35,13 @@
 </html>
 <?php
 	//codigo php
+	if(ISSET($_POST['submit'])){
+		$tipo_equipamento = $_POST['tipo'];
+		$sql = "INSERT INTO equipamentos(nome) VALUES ('$tipo_equipamento')";
+		$inserido = mysql_query($sql) or die(mysql_error());
+		if($inserido){
+			echo "Inserido com sucesso\n";
+		}
+		mysql_close($conn);
+	}
 ?>

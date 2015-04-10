@@ -19,7 +19,7 @@
 	<table width='900 px' border="0" align="center">
 	<form action="#" method="POST">
 		<tr>
-			<td>Nome:</td>
+			<td>Nome da Marca:</td>
 			<td><input type="text" name="nome"><br></td>	
 		</tr>
 		<tr>
@@ -35,14 +35,29 @@
 </body>
 </html>
 <?php
-	if($_ISSET($_POST['submit']){
+	if(ISSET($_POST['submit'])){
 		$nome = $_POST['nome'];
-		$sql = "INSERT INTO marca '.
-		'(nome) '.
-		'VALUES ($nome)";
-		$inserido = mysql_query( $sql, $conn );
+		$sql = "INSERT INTO marca(nome) VALUES ('$nome')";
+		$inserido = mysql_query($sql) or die(mysql_error());
 		if($inserido){
 			echo "Inserido com sucesso\n";
 		}
-	mysql_close($conn);
+		mysql_close($conn);
+		
+		/*
+			<td>Marca:</td>
+			<td><select name="id_marca">
+					<?php
+						$query = "SELECT * FROM marca";
+						$result = mysql_query($query) or die(mysql_error());
+						while($row = mysql_fetch_array($result)){    
+							?>
+								<option value="<?php echo $row['id'];?>"><?php echo $row['nome'];?></option>
+							<?php
+						}
+					?>
+				</select>
+			</td>
+		*/
+	}
 ?>
